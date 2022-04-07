@@ -42,6 +42,30 @@ function playRound(playerSelection,computerSelection) {
     return outcome;
 }
 
-const playerSelection = playerPlay();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection,computerSelection));
+function game() {
+    let playerSelection;
+    let computerSelection;
+    let playerCounter = 0;
+    let computerCounter = 0;
+    for (let i = 0; i < 5; i++) {
+        console.log(`Round ${i+1}`);
+        playerSelection = playerPlay();
+        computerSelection = computerPlay();
+        console.log(playRound(playerSelection,computerSelection));
+        if (playRound(playerSelection,computerSelection).includes('win')) {
+            playerCounter++;
+        } else if (playRound(playerSelection,computerSelection).includes('lose')) {
+            computerCounter++;
+        }
+    }
+
+    if (playerCounter > computerCounter) {
+        console.log('You won against the computer!')
+    } else if (playerCounter < computerCounter) {
+        console.log('You lost against the computer.')
+    } else {
+        console.log('You tied with the computer.')
+    }
+}
+
+game();
