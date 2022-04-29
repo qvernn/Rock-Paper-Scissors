@@ -46,27 +46,32 @@ function game() {
     const computerScore = document.querySelector('.computer-score > .score');
     computerScore.textContent = 0;
 
+    const WINCONDITION = 5;
+    let playerChoice;
+    let computerChoice;
+    
+
     buttons.forEach((button) => {
-        button.addEventListener('click',(e) => {
-            playerChoice = e.path[0].textContent;
-            playerHand.textContent = playerChoice;
+        button.addEventListener('click',() => {
+                playerChoice = button.textContent;
+                playerHand.textContent = playerChoice;
 
-            computerChoice = computerPlay();
+                computerChoice = computerPlay();
 
-            roundResult.textContent = playRound(playerChoice,computerChoice)
-            console.log(roundResult.textContent.includes('win'));
+                roundResult.textContent = playRound(playerChoice,computerChoice)
 
-            if (roundResult.textContent.includes('win')) {
-                playerScore.textContent++;
-            } else if (roundResult.textContent.includes('lose')) {
-                computerScore.textContent++;
-            }
+                if (roundResult.textContent.includes('win')) {
+                    playerScore.textContent++;
+                } else if (roundResult.textContent.includes('lose')) {
+                    computerScore.textContent++;
+                }
 
-            if (playerScore.textContent == 5) {
-                console.log('You won against the computer!')
-            } else if (computerScore.textContent == 5) {
-                console.log('You lost against the computer.')
-            }
+                if (playerScore.textContent == WINCONDITION) {
+                    roundResult.textContent = 'You won against the computer!';
+
+                } else if (computerScore.textContent == WINCONDITION) {
+                    roundResult.textContent = 'You lost against the computer.';
+                }
         })
     });
 }
