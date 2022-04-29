@@ -1,20 +1,21 @@
 function computerPlay() {
+    const hand = document.querySelector('.computer-hand > .hand');
     const select = ['Rock','Paper','Scissors'];
     let compHand = select[Math.floor(Math.random()*select.length)];
-    console.log(compHand);
+    hand.textContent = compHand;
     return compHand;
 }
 
 function playerPlay() {
     const buttons = document.querySelectorAll('button');
-    let playerChoice = '';
+    const hand = document.querySelector('.player-hand > .hand');
     buttons.forEach((button) => {
         button.addEventListener('click',(e) => {
-            console.log(e.path[0].innerText);
+            hand.textContent = e.path[0].textContent;
         })
     });
-    console.log(playerChoice);
-    return playerChoice;
+    console.log(typeof(hand.textContent));
+    return hand.textContent;
 }   
 
 function playRound(playerSelection,computerSelection) {
@@ -46,6 +47,3 @@ function playRound(playerSelection,computerSelection) {
     }
     return outcome;
 }
-
-let choice;
-choice = playerPlay();
