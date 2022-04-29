@@ -2,12 +2,7 @@ body {
     background-color: lightgray;
 }
 
-.playerSelection {
-    position: absolute;
-    top: 300px;
-    bottom: 300px;
-    left: 0;
-    right: 0;
+.player-selection {
     display: flex;
     justify-content: space-evenly;
     gap: 8px;
