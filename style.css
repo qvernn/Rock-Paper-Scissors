@@ -11,7 +11,7 @@ body {
 
 .your-score, .computer-score {
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .score {
@@ -44,4 +44,15 @@ button {
 
 span {
     font-size: 24px;
+}
+
+.round-result {
+    height: auto;
+    width: 200px;
+    text-align: center;
+    margin: 32px auto;
+    font-size: 32px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
 }
