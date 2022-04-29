@@ -23,13 +23,21 @@ body {
     color: white;
     border-style: solid;
     border-color: black;
-    border-radius: 8px;
+    border-radius: 5px;
+}
+
+.dialogue {
+    height: auto;
+    width: 300px;
+    text-align: center;
+    margin: 32px auto;
+    font-size: 20px;
 }
 
 .player-selection {
     display: flex;
-    justify-content: space-evenly;
-    gap: 8px;
+    justify-content: center;
+    gap: 16px;
 }
 
 button {
