@@ -6,18 +6,6 @@ function computerPlay() {
     return compHand;
 }
 
-function playerPlay() {
-    const buttons = document.querySelectorAll('button');
-    const hand = document.querySelector('.player-hand > .hand');
-    buttons.forEach((button) => {
-        button.addEventListener('click',(e) => {
-            hand.textContent = e.path[0].textContent;
-        })
-    });
-    console.log(typeof(hand.textContent));
-    return hand.textContent;
-}   
-
 function playRound(playerSelection,computerSelection) {
     let outcome;
     if (playerSelection === 'Rock') {
@@ -47,3 +35,19 @@ function playRound(playerSelection,computerSelection) {
     }
     return outcome;
 }
+
+function game() {
+    const buttons = document.querySelectorAll('button');
+    const playerHand = document.querySelector('.player-hand > .hand');
+    buttons.forEach((button) => {
+        button.addEventListener('click',(e) => {
+            playerChoice = e.path[0].textContent;
+            playerHand.textContent = playerChoice;
+            computerChoice = computerPlay();
+            console.log(playerChoice);
+            console.log(computerChoice);
+        })
+    });
+}
+
+game();
