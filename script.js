@@ -6,11 +6,16 @@ function computerPlay() {
 }
 
 function playerPlay() {
-    let playerChoose = prompt("Rock, Paper, or Scissors?",'');
-    playerChoose = playerChoose.charAt(0).toUpperCase() + playerChoose.slice(1);
-    console.log(playerChoose);
+    let playerChoose = '';
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button) => {
+        button.addEventListener('click',(e) => {
+            playerChoose = `${e.path[0].innerText}`;
+            console.log(playerChoose);
+        })
+    });
     return playerChoose;
-}
+}   
 
 function playRound(playerSelection,computerSelection) {
     let outcome;
@@ -41,4 +46,3 @@ function playRound(playerSelection,computerSelection) {
     }
     return outcome;
 }
-
