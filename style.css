@@ -55,8 +55,8 @@ span {
 }
 
 .round-result {
-    height: auto;
-    width: 200px;
+    height: 35px;
+    width: 500px;
     text-align: center;
     margin: 32px auto;
     font-size: 32px;
