@@ -6,15 +6,15 @@ function computerPlay() {
 }
 
 function playerPlay() {
-    let playerChoose = '';
     const buttons = document.querySelectorAll('button');
+    let playerChoice = '';
     buttons.forEach((button) => {
         button.addEventListener('click',(e) => {
-            playerChoose = `${e.path[0].innerText}`;
-            console.log(playerChoose);
+            console.log(e.path[0].innerText);
         })
     });
-    return playerChoose;
+    console.log(playerChoice);
+    return playerChoice;
 }   
 
 function playRound(playerSelection,computerSelection) {
@@ -46,3 +46,6 @@ function playRound(playerSelection,computerSelection) {
     }
     return outcome;
 }
+
+let choice;
+choice = playerPlay();
